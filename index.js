@@ -45,12 +45,12 @@ Your sole task is to ask the user to install one or more connected devices in th
 import axios from "axios";
 import yaml from "js-yaml";
 
-import locationsModel from "./schemas/models/locations.json" assert { type: "json" };
-import lightsModel from "./schemas/models/lights.json" assert { type: "json" };
-import shuttersModel from "./schemas/models/shutters.json" assert { type: "json" };
+import locationsModel from "./schemas/models/locations.json" with { type: "json" };
+import lightsModel from "./schemas/models/lights.json" with { type: "json" };
+import shuttersModel from "./schemas/models/shutters.json" with { type: "json" };
 
-import updateLightsFunction from "./schemas/functions/update_lights.json" assert { type: "json" };
-import updateShuttersFunction from "./schemas/functions/update_shutters.json" assert { type: "json" };
+import updateLightsFunction from "./schemas/functions/update_lights.json" with { type: "json" };
+import updateShuttersFunction from "./schemas/functions/update_shutters.json" with { type: "json" };
 
 async function request(method, params) {
   return await axios.post(`${process.env.BASE_URL}/core/api/jeeApi.php`, {
